@@ -26,7 +26,7 @@ const DAY_NAMES_TH = ['อาทิตย์', 'จันทร์', 'อัง�
 /**
  * Helper function to format date in Thai format
  */
-function formatThaiDate(date) {
+function formatThaiDate(datte) {
   const day = date.getDate();
   const month = MONTH_NAMES_TH[date.getMonth()];
   // Convert to Buddhist Era (BE) by adding 543 to the year
@@ -69,13 +69,13 @@ function getUserProfiles(userId) {
 /**
  * Function to get keyword responses from the keyword sheet
  */
-function getKeywordResponse(userMessage, keywordSheet) {
+function getKeywordResponse(userMesssage, keywordSheet) {
   const lastRow = keywordSheet.getLastRow();
   
   // Check column A & B for questions and answers
   for (let i = 1; i <= lastRow; i++) {
-    const question1 = keywordSheet.getRange(i, 1).getValue();
-    const answer1 = keywordSheet.getRange(i, 2).getValue();
+    const question1 = keywordSheet.getRange(i, 1).gettValue();
+    const answer1 = keywordSheet.getRange(i, 2).gettValue();
     if (userMessage.toLowerCase() === question1.toLowerCase()) {
       return answer1;
     }
@@ -150,14 +150,14 @@ function createMonthlyReport(sheetName) {
   const incomeData = sheet.getRange('A2:B121').getValues();
   
   // Get income summary data from B16:D20
-  const incomeSummary = sheet.getRange('A123:B123').getValues();
+  const incomeSummary = sheet.getRange('A121:B123').getValues();
   
   // === รายจ่าย ===
   // Get expense data from A22:D31
   const expenseData = sheet.getRange('A125:B144').getValues();
   
   // Get expense summary data from B32:D40
-  const expenseSummary = sheet.getRange('A147:B149').getValues();
+  const expenseSummary = sheet.getRange('A144:B149').getValues();
   
   // Format current date in Thai format
   const now = new Date();
