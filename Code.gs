@@ -4,7 +4,7 @@
  */
 
 // LINE Messaging API Channel Access Token
-const CHANNEL_ACCESS_TOKEN = 'xxxxxxxxxxx;
+const ACCESS_TOKEN = 'xxxxxxxxxxx;
 
 // Google Sheet ID
 const SHEET_ID = 'xxxxxxxxxxxx';
